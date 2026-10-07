@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable · Marie d’Antoni, céramiste</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F7F3EE">
+  <!-- GitHub Pages affiche cette page pour toute adresse inconnue, y compris dans un
+       sous-dossier qui n’existe pas (par exemple /a/b/). Pour que les liens relatifs
+       ci-dessous pointent toujours vers la racine du site, ce petit script fixe la base :
+       « / » quand le site est à la racine (cas normal), « /nom-du-dossier/ » sinon. -->
+  <script>
+    (function () {
+      var dossier = 'marie-dantoni'; // seulement utile si le site est un jour servi dans ce sous-dossier
+      var debut = location.pathname.split('/')[1];
+      var base = document.createElement('base');
+      base.href = (debut === dossier) ? '/' + dossier + '/' : '/';
+      document.head.appendChild(base);
+    })();
+  </script>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Karla:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css?v=1">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.mdaPret)document.documentElement.classList.remove('js')},3000);</script>
+  <script src="js/main.js?v=1" defer></script>
+</head>
+<body>
+  <a class="aller-au-contenu" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <div class="entete-inner">
+      <a class="marque" href="index.html">Marie d’Antoni</a>
+      <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><span></span><span></span></button>
+      <nav id="menu" class="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="presentation.html">Présentation</a></li>
+          <li><a href="rendez-vous.html">Rendez-vous</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="entete-page page-404">
+      <div class="conteneur">
+        <p class="surtitre apparition">Erreur 404</p>
+        <h1 class="apparition">Page introuvable</h1>
+        <p class="chapo apparition apparition--2">Cette page n’existe pas ou a été déplacée.</p>
+        <div class="boutons apparition apparition--3">
+          <a class="bouton" href="index.html">Retour à l’accueil</a>
+          <a class="bouton bouton--contour" href="boutique.html">Voir la boutique</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied-inner">
+      <div class="pied-marque">
+        <a class="marque" href="index.html">Marie d’Antoni</a>
+        <p class="pied-metier">Céramiste</p>
+      </div>
+      <nav aria-label="Pied de page">
+        <h2 class="pied-titre">Le site</h2>
+        <ul>
+          <li><a href="presentation.html">Présentation</a></li>
+          <li><a href="rendez-vous.html">Rendez-vous</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="pied-titre">Suivre Marie</h2>
+        <!-- À COMPLÉTER : liens vers les réseaux sociaux de Marie, par exemple <a href="https://www.instagram.com/…">Instagram</a> -->
+        <ul>
+          <li>Instagram&nbsp;: <span class="a-completer">[à compléter]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <div class="conteneur">
+        <p>© <span data-annee>2026</span> Marie d’Antoni</p>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
