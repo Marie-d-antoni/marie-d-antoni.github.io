@@ -17,15 +17,20 @@
       var base = document.createElement('base');
       base.href = (debut === dossier) ? '/' + dossier + '/' : '/';
       document.head.appendChild(base);
+      // Avec <base>, « #contenu » mènerait à l’accueil : on rattache le lien d’évitement à cette page.
+      document.addEventListener('DOMContentLoaded', function () {
+        var lien = document.querySelector('.aller-au-contenu');
+        if (lien) lien.href = location.href.split('#')[0] + '#contenu';
+      });
     })();
   </script>
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Karla:wght@400;500;600&amp;display=swap">
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=3">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.mdaPret)document.documentElement.classList.remove('js')},3000);</script>
-  <script src="js/main.js?v=1" defer></script>
+  <script src="js/main.js?v=2" defer></script>
 </head>
 <body>
   <a class="aller-au-contenu" href="#contenu">Aller au contenu</a>

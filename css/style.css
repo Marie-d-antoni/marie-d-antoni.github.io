@@ -14,7 +14,7 @@
   --gres: #8B8279;         /* gris de grès, éléments décoratifs */
   --encre: #2B2622;        /* texte principal */
   --encre-douce: #57504A;  /* texte secondaire */
-  --terre: #A0583B;        /* terre cuite : boutons, liens, accents */
+  --terre: #9A5437;        /* terre cuite : boutons, liens, accents (foncée le 07/10 pour un contraste AA sur biscuit) */
   --terre-fonce: #7D4029;  /* survol des boutons */
   --terre-claire: #D49A7E; /* accent sur fond sombre (pied de page) */
   --celadon: #B8C3B4;      /* touche de céladon (émail vert-gris) */
@@ -101,7 +101,7 @@ p { margin: 0 0 1.1em; }
 /* Infos manquantes, visibles pour les repérer facilement */
 .a-completer {
   color: var(--terre-fonce);
-  background: rgba(160, 88, 59, .09);
+  background: rgba(154, 84, 55, .09);
   border-radius: 3px;
   padding: 0 .3em;
 }
@@ -226,6 +226,10 @@ p { margin: 0 0 1.1em; }
     opacity: 0;
     transform: translateY(-6px);
     transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s;
+    max-height: calc(100vh - var(--entete));
+    max-height: calc(100dvh - var(--entete));
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   .js .menu-ouvert .menu {
     visibility: visible;
@@ -243,6 +247,7 @@ p { margin: 0 0 1.1em; }
     letter-spacing: 0;
   }
   .js .menu a::after { display: none; }
+  .js .menu a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .3em; }
 
   html:not(.js) .entete-inner { height: auto; flex-wrap: wrap; padding-block: 16px; }
   html:not(.js) .menu ul { gap: 18px; }
@@ -288,11 +293,11 @@ p { margin: 0 0 1.1em; }
   letter-spacing: .05em;
   color: var(--terre);
   text-decoration: none;
-  border-bottom: 1px solid rgba(160, 88, 59, .35);
+  border-bottom: 1px solid rgba(154, 84, 55, .35);
   padding-bottom: 2px;
   transition: border-color .3s ease, gap .3s ease;
 }
-.lien-fleche::after { content: "→"; }
+.lien-fleche::after { content: "→"; content: "→" / ""; }
 
 /* ---------- Cadres photo (et emplacements « Photo à venir ») ----------
    Pour mettre une vraie photo : remplacer le <span class="a-venir">…</span>
@@ -330,7 +335,7 @@ p { margin: 0 0 1.1em; }
   font-weight: 500;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: rgba(43, 38, 34, .5);
+  color: rgba(43, 38, 34, .8);
 }
 .a-venir img {
   width: min(40%, 160px);
@@ -359,6 +364,7 @@ p { margin: 0 0 1.1em; }
 }
 .section-tete h2:last-child,
 .section-tete p:last-child { margin-bottom: 0; }
+.section-tete p:not(.surtitre) { color: var(--encre-douce); }
 
 .duo {
   display: grid;
@@ -371,7 +377,7 @@ p { margin: 0 0 1.1em; }
 .texte p:not(.surtitre) { color: var(--encre-douce); }
 .texte .boutons { margin-top: 1.8rem; }
 
-@media (max-width: 860px) {
+@media (max-width: 700px) {
   .duo { grid-template-columns: 1fr; }
   .duo--inverse > :first-child { order: 0; }
 }
@@ -410,7 +416,7 @@ p { margin: 0 0 1.1em; }
 }
 .hero-texte .chapo { margin-bottom: 2.2rem; }
 
-@media (max-width: 860px) {
+@media (max-width: 700px) {
   .accueil-hero .conteneur { grid-template-columns: 1fr; }
 }
 
@@ -461,7 +467,7 @@ p { margin: 0 0 1.1em; }
 .etape h3 { font-size: 1.4rem; margin-bottom: .4em; }
 .etape p { margin: 0; font-size: 1rem; color: var(--encre-douce); }
 
-@media (max-width: 960px) { .etapes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 960px) { .etapes { grid-template-columns: repeat(2, 1fr); } .etapes--3 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 760px) { .etapes--3 { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .etapes { grid-template-columns: 1fr; } }
 
@@ -521,7 +527,7 @@ p { margin: 0 0 1.1em; }
 @media (max-width: 860px) { .grille-boutique { grid-template-columns: repeat(2, 1fr); } }
 
 .piece .cadre { margin-bottom: 18px; }
-.piece h3 { font-size: clamp(1.2rem, 1.8vw, 1.42rem); margin-bottom: .25em; }
+.piece h2 { font-size: clamp(1.2rem, 1.8vw, 1.42rem); margin-bottom: .25em; }
 .piece-meta { margin-bottom: .55em; font-size: .92rem; line-height: 1.55; color: var(--encre-douce); }
 .piece-prix {
   margin: 0;
@@ -585,6 +591,7 @@ p { margin: 0 0 1.1em; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
   content: "+";
+  content: "+" / "";
   position: absolute;
   right: 6px;
   top: 50%;
@@ -608,8 +615,15 @@ p { margin: 0 0 1.1em; }
   gap: 24px clamp(32px, 5vw, 72px);
 }
 .bandeau-entreprises h2 { margin-bottom: .3em; }
-.bandeau-entreprises p { margin: 0; color: var(--encre-douce); max-width: 36em; }
-@media (max-width: 760px) { .bandeau-entreprises { grid-template-columns: 1fr; } }
+.bandeau-entreprises p:not(.surtitre) { margin: 0; color: var(--encre-douce); max-width: 36em; }
+@media (max-width: 760px) { .bandeau-entreprises { grid-template-columns: 1fr; } .bandeau-entreprises .bouton { justify-self: start; } }
+
+.essentiel { margin-top: clamp(40px, 6vw, 64px); }
+@media (max-width: 760px) {
+  .essentiel { grid-template-columns: 1fr 1fr; gap: 22px 20px; }
+  .essentiel dd { font-size: 1.1rem; }
+}
+.lien-suite { margin: 1.6rem 0 0; }
 
 /* ---------- Mentions légales ---------- */
 
@@ -652,6 +666,7 @@ p { margin: 0 0 1.1em; }
 .pied ul { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; }
 .pied a { color: var(--porcelaine); text-decoration: none; }
 .pied a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.pied :focus-visible { outline-color: var(--terre-claire); }
 .pied .a-completer { color: #E8C2AF; background: rgba(212, 154, 126, .14); white-space: nowrap; }
 
 .pied-bas { margin-top: clamp(48px, 6vw, 72px); border-top: 1px solid rgba(247, 243, 238, .12); }

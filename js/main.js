@@ -35,7 +35,10 @@
       if (e.target.closest('a')) fermerMenu();
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') fermerMenu();
+      if (e.key !== 'Escape' || bouton.getAttribute('aria-expanded') !== 'true') return;
+      var dansLeMenu = menu.contains(document.activeElement);
+      fermerMenu();
+      if (dansLeMenu) bouton.focus(); // le focus ne reste pas sur un lien devenu invisible
     });
     window.addEventListener('resize', function () {
       if (window.innerWidth > 760) fermerMenu();
