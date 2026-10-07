@@ -478,6 +478,7 @@ p { margin: 0 0 1.1em; }
 .carte-forme { width: 56px; height: auto; margin-bottom: 20px; }
 .carte h3 { margin-bottom: .45em; }
 .carte p { color: var(--encre-douce); }
+.carte .carte-renvoi { margin-top: -.4em; font-size: .95rem; }
 .carte dl {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -544,6 +545,71 @@ p { margin: 0 0 1.1em; }
 }
 .encart h2 { font-size: clamp(1.5rem, 2.8vw, 1.95rem); margin-bottom: .25em; }
 .encart p { margin: 0; color: var(--encre-douce); max-width: 32em; }
+
+/* ---------- Ateliers en entreprise ---------- */
+
+.points { list-style: none; margin: 0; padding: 0; }
+.points li {
+  position: relative;
+  padding: 14px 0 14px 28px;
+  border-top: 1px solid var(--ligne);
+  color: var(--encre-douce);
+}
+.points li:last-child { border-bottom: 1px solid var(--ligne); }
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 1.45em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--terre);
+  opacity: .8;
+}
+.points strong { color: var(--encre); font-weight: 600; }
+
+.faq { max-width: 52em; border-top: 1px solid var(--ligne); }
+.faq details { border-bottom: 1px solid var(--ligne); }
+.faq summary {
+  position: relative;
+  display: block;
+  padding: 20px 44px 20px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--serif);
+  font-size: clamp(1.18rem, 2vw, 1.35rem);
+  line-height: 1.3;
+  color: var(--encre);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--terre);
+  transition: transform .3s var(--douceur);
+}
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq summary:hover { color: var(--terre-fonce); }
+.faq summary:focus-visible { outline: 2px solid var(--terre); outline-offset: 4px; }
+.faq details p { margin: 0 0 22px; max-width: 44em; color: var(--encre-douce); }
+
+.bandeau-entreprises {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px clamp(32px, 5vw, 72px);
+}
+.bandeau-entreprises h2 { margin-bottom: .3em; }
+.bandeau-entreprises p { margin: 0; color: var(--encre-douce); max-width: 36em; }
+@media (max-width: 760px) { .bandeau-entreprises { grid-template-columns: 1fr; } }
 
 /* ---------- Mentions légales ---------- */
 
