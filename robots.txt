@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marie-d-antoni.github.io/sitemap.xml

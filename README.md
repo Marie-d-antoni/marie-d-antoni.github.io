@@ -13,6 +13,7 @@ Site vitrine de Marie d’Antoni, céramiste. C’est un site **statique** (HTML
 | `index.html` | Accueil : nom, accroche, trois blocs vers les autres pages |
 | `presentation.html` | Présentation : qui est Marie, son travail, l’atelier |
 | `rendez-vous.html` | Rendez-vous : types de rendez-vous, déroulé, coordonnées |
+| `ateliers-entreprise.html` | Ateliers en entreprise : formules, déroulé, questions fréquentes, demande de devis |
 | `boutique.html` | Boutique : grille des pièces (prix à venir, pas de paiement en ligne) |
 | `mentions-legales.html` | Mentions légales (liées dans le pied de page) |
 | `404.html` | Page affichée quand une adresse n’existe pas |
@@ -24,7 +25,7 @@ Site vitrine de Marie d’Antoni, céramiste. C’est un site **statique** (HTML
   ```
   grep -n "à compléter\|À COMPLÉTER\|PHOTO À VENIR" *.html
   ```
-- **Menu et pied de page** : ils sont répétés dans chaque page. Une modification du menu ou du pied de page se fait dans les 6 fichiers `.html`.
+- **Menu et pied de page** : ils sont répétés dans chaque page. Une modification du menu ou du pied de page se fait dans les 7 fichiers `.html`.
 - **Couleurs, polices, espacements** : en haut de `css/style.css`, dans le bloc `:root`.
 - **Menu mobile et animations** : `js/main.js`.
 - **Bouton « Prendre rendez-vous »** (page `rendez-vous.html`) : il descend pour l’instant vers les coordonnées (`href="#coordonnees"`). On remplacera ce lien par l’outil de réservation de Marie ou par un `mailto:` quand on le connaîtra.
@@ -73,5 +74,9 @@ Un commit par modification, puis `git push` sur la branche `main`. GitHub Pages 
 ## Liens et adresse du site
 
 - Tous les liens sont **relatifs** (`presentation.html`, `css/style.css`…), jamais `/presentation.html` : le site marche à la racine comme dans un sous-dossier, et le nom du dossier local n’a pas d’importance.
-- L’adresse complète du site n’apparaît que dans les balises de partage `og:url` en haut de chaque page (et dans ce fichier). Si l’adresse change (nom de domaine, par exemple), il suffit de modifier ces lignes et d’ajouter un fichier `CNAME`.
+- L’adresse complète du site n’apparaît qu’à ces endroits : en haut de chaque page, les balises de partage (`og:url`, `og:image`) et l’adresse de référence (`<link rel="canonical">`) ; le plan du site `sitemap.xml` ; le fichier `robots.txt` ; et ce fichier. Si l’adresse change (nom de domaine, par exemple), il faut modifier ces lignes et ajouter un fichier `CNAME`. Pour les retrouver :
+  ```
+  grep -rn "marie-d-antoni.github.io" --include=*.html --include=*.xml --include=*.txt .
+  ```
+- `img/partage.jpg` (1 200 × 630 px) est l’image qui s’affiche quand on partage un lien du site (messageries, réseaux). Elle pourra être remplacée par une vraie photo au même format.
 - Polices : EB Garamond (titres) et Karla (texte), chargées depuis Google Fonts.
