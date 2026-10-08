@@ -81,4 +81,4 @@ Un commit par modification, puis `git push` sur la branche `main`. GitHub Pages 
   grep -rn "marie-d-antoni.github.io" --include=*.html --include=*.xml --include=*.txt .
   ```
 - `img/partage-3.jpg` (1 200 × 630 px, nom et métier seulement, sans phrase à tenir à jour) est l’image qui s’affiche quand on partage un lien du site (messageries, réseaux). Elle pourra être remplacée par une vraie photo au même format.
-- Polices : EB Garamond (titres) et Karla (texte), chargées depuis Google Fonts.
+- Police : Karla, pour les titres comme pour le texte (depuis le 08/10/2026), chargée depuis Google Fonts.

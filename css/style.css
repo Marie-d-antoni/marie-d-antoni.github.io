@@ -21,8 +21,8 @@
   --ligne: rgba(43, 38, 34, .14);
 
   /* Polices (chargées depuis Google Fonts dans chaque page) */
-  --serif: "EB Garamond", Garamond, Georgia, "Times New Roman", serif;
   --sans: "Karla", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: var(--sans);   /* titres : même police que le texte (demande de Marie, 08/10). Avant : "EB Garamond" */
 
   /* Mise en page */
   --largeur: 1200px;
