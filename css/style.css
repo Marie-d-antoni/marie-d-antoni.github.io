@@ -497,6 +497,16 @@ p { margin: 0 0 1.1em; }
 .carte dt { color: var(--encre-douce); }
 .carte dd { margin: 0; }
 
+/* Ateliers : cartes sur deux colonnes, infos (tarif, durée) en haut de la carte */
+.grille-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(28px, 3vw, 44px);
+}
+@media (max-width: 860px) { .grille-2 { grid-template-columns: 1fr; gap: 32px; } }
+.carte .carte-infos { margin: 0 0 1.3em; padding: 12px 0; border-bottom: 1px solid var(--ligne); }
+.carte .cadre { margin: .2em 0 1.2em; }
+
 .coordonnees {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -617,6 +627,7 @@ p { margin: 0 0 1.1em; }
 }
 .bandeau-entreprises h2 { margin-bottom: .3em; }
 .bandeau-entreprises p:not(.surtitre) { margin: 0; color: var(--encre-douce); max-width: 36em; }
+.bandeau-entreprises p:not(.surtitre) + p { margin-top: .9em; }
 @media (max-width: 760px) { .bandeau-entreprises { grid-template-columns: 1fr; } .bandeau-entreprises .bouton { justify-self: start; } }
 
 .essentiel { margin-top: clamp(40px, 6vw, 64px); }
