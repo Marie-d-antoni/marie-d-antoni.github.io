@@ -7,18 +7,20 @@
    ========================================================= */
 
 :root {
-  /* Couleurs */
-  --porcelaine: #F7F3EE;   /* fond principal, blanc cassé */
-  --biscuit: #EEE8DF;      /* fond des sections alternées (terre cuite une fois, non émaillée) */
-  --craie: #E4DDD3;        /* fonds d'encarts, cadres vides */
-  --gres: #8B8279;         /* gris de grès, éléments décoratifs */
-  --encre: #2B2622;        /* texte principal */
-  --encre-douce: #57504A;  /* texte secondaire */
-  --terre: #9A5437;        /* terre cuite : boutons, liens, accents (foncée le 07/10 pour un contraste AA sur biscuit) */
-  --terre-fonce: #7D4029;  /* survol des boutons */
-  --terre-claire: #D49A7E; /* accent sur fond sombre (pied de page) */
-  --celadon: #B8C3B4;      /* touche de céladon (émail vert-gris) */
-  --ligne: rgba(43, 38, 34, .14);
+  /* Couleurs (palette du 08/10 d'après les références de Marie :
+     le vert olive rgb(123, 134, 90), le marron de sa robe, le beige de ses poteries) */
+  --porcelaine: #F6F2EA;   /* fond principal : beige des poteries, très clair */
+  --biscuit: #E8DFCE;      /* fond des sections alternées : beige des poteries */
+  --craie: #DDD3BF;        /* fonds d'encarts, cadres vides */
+  --gres: #8C8470;         /* gris chaud, éléments décoratifs */
+  --encre: #2E2225;        /* texte principal et pied de page : marron de la robe */
+  --encre-douce: #5A4D4F;  /* texte secondaire */
+  --olive: #7B865A;        /* vert olive de Marie, pour les grands éléments (« Céramiste », traits) */
+  --terre: #59633E;        /* accent : boutons, liens, petits titres. Olive foncé, pour rester lisible (contraste AA) */
+  --terre-fonce: #464E30;  /* survol des boutons */
+  --terre-claire: #AEB98A; /* accent sur fond sombre (pied de page) : olive clair */
+  --celadon: #B9C1A6;      /* vert-gris doux */
+  --ligne: rgba(46, 34, 37, .14);
 
   /* Polices (chargées depuis Google Fonts dans chaque page) */
   --sans: "Karla", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -101,7 +103,7 @@ p { margin: 0 0 1.1em; }
 /* Infos manquantes, visibles pour les repérer facilement */
 .a-completer {
   color: var(--terre-fonce);
-  background: rgba(154, 84, 55, .09);
+  background: rgba(89, 99, 62, .09);
   border-radius: 3px;
   padding: 0 .3em;
 }
@@ -125,7 +127,7 @@ p { margin: 0 0 1.1em; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(247, 243, 238, .95);
+  background: rgba(246, 242, 234, .95);
   -webkit-backdrop-filter: saturate(1.2) blur(8px);
   backdrop-filter: saturate(1.2) blur(8px);
   border-bottom: 1px solid transparent;
@@ -280,7 +282,7 @@ p { margin: 0 0 1.1em; }
 .bouton--contour {
   color: var(--encre);
   background: transparent;
-  border-color: rgba(43, 38, 34, .35);
+  border-color: rgba(46, 34, 37, .35);
 }
 .bouton--contour:hover { color: var(--porcelaine); background: var(--encre); border-color: var(--encre); }
 
@@ -293,7 +295,7 @@ p { margin: 0 0 1.1em; }
   letter-spacing: .05em;
   color: var(--terre);
   text-decoration: none;
-  border-bottom: 1px solid rgba(154, 84, 55, .35);
+  border-bottom: 1px solid rgba(89, 99, 62, .35);
   padding-bottom: 2px;
   transition: border-color .3s ease, gap .3s ease;
 }
@@ -335,7 +337,7 @@ p { margin: 0 0 1.1em; }
   font-weight: 500;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: rgba(43, 38, 34, .8);
+  color: rgba(46, 34, 37, .8);
 }
 .a-venir img {
   width: min(40%, 160px);
@@ -344,12 +346,12 @@ p { margin: 0 0 1.1em; }
 }
 
 /* Tons d'émail pour les emplacements provisoires */
-.ton-terre   { background: radial-gradient(120% 95% at 28% 16%, #EDDACE 0%, #DFBFAD 52%, #D0A48F 100%); }
-.ton-gres    { background: radial-gradient(120% 95% at 72% 18%, #EEEAE4 0%, #DED8CF 55%, #CDC5BA 100%); }
-.ton-celadon { background: radial-gradient(120% 95% at 30% 18%, #E7ECE4 0%, #D3DCCF 55%, #BECAB9 100%); }
-.ton-craie   { background: radial-gradient(120% 95% at 50% 12%, #F6F2EC 0%, #EAE4DB 60%, #DED6CB 100%); }
-.ton-nuit    { background: radial-gradient(120% 95% at 34% 18%, #5D5550 0%, #403A35 55%, #2D2824 100%); }
-.ton-nuit .a-venir { color: rgba(247, 243, 238, .7); }
+.ton-terre   { background: radial-gradient(120% 95% at 28% 16%, #E8E7D6 0%, #CFD1B3 52%, #B3B88F 100%); }
+.ton-gres    { background: radial-gradient(120% 95% at 72% 18%, #F0EBE0 0%, #E2D9C7 55%, #D2C6AF 100%); }
+.ton-celadon { background: radial-gradient(120% 95% at 30% 18%, #E6E9DD 0%, #D0D6C2 55%, #B9C1A6 100%); }
+.ton-craie   { background: radial-gradient(120% 95% at 50% 12%, #F5F1E8 0%, #E9E2D4 60%, #DCD3C1 100%); }
+.ton-nuit    { background: radial-gradient(120% 95% at 34% 18%, #574549 0%, #3E2F33 55%, #2E2225 100%); }
+.ton-nuit .a-venir { color: rgba(246, 242, 234, .7); }
 .ton-nuit .a-venir img { filter: invert(1); opacity: .75; }
 
 /* ---------- Sections ---------- */
@@ -403,7 +405,7 @@ p { margin: 0 0 1.1em; }
   font-size: .44em;
   font-style: italic;
   font-weight: 400;
-  color: var(--terre);
+  color: var(--olive);
 }
 .hero-texte h1 .metier::before {
   content: "";
@@ -651,7 +653,7 @@ p { margin: 0 0 1.1em; }
 
 .pied {
   background: var(--encre);
-  color: rgba(247, 243, 238, .78);
+  color: rgba(246, 242, 234, .78);
   padding-top: clamp(56px, 8vw, 96px);
   font-size: .95rem;
 }
@@ -675,15 +677,15 @@ p { margin: 0 0 1.1em; }
   font-weight: 600;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(247, 243, 238, .55);
+  color: rgba(246, 242, 234, .55);
 }
 .pied ul { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; }
 .pied a { color: var(--porcelaine); text-decoration: none; }
 .pied a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .pied :focus-visible { outline-color: var(--terre-claire); }
-.pied .a-completer { color: #E8C2AF; background: rgba(212, 154, 126, .14); white-space: nowrap; }
+.pied .a-completer { color: #D5DCBC; background: rgba(174, 185, 138, .16); white-space: nowrap; }
 
-.pied-bas { margin-top: clamp(48px, 6vw, 72px); border-top: 1px solid rgba(247, 243, 238, .12); }
+.pied-bas { margin-top: clamp(48px, 6vw, 72px); border-top: 1px solid rgba(246, 242, 234, .12); }
 .pied-bas .conteneur {
   display: flex;
   flex-wrap: wrap;
