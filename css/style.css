@@ -502,6 +502,7 @@ p { margin: 0 0 1.1em; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(28px, 3vw, 44px);
+  align-items: start;
 }
 @media (max-width: 860px) { .grille-2 { grid-template-columns: 1fr; gap: 32px; } }
 .carte .carte-infos { margin: 0 0 1.3em; padding: 12px 0; border-bottom: 1px solid var(--ligne); }
@@ -562,6 +563,7 @@ p { margin: 0 0 1.1em; }
 }
 .encart h2 { font-size: clamp(1.5rem, 2.8vw, 1.95rem); margin-bottom: .25em; }
 .encart p { margin: 0; color: var(--encre-douce); max-width: 32em; }
+.section--biscuit .encart { background: var(--porcelaine); border: 1px solid var(--ligne); }
 
 /* ---------- Ateliers en entreprise ---------- */
 
