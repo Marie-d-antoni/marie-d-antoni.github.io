@@ -7,19 +7,19 @@
    ========================================================= */
 
 :root {
-  /* Couleurs (palette du 08/10 d'après les références de Marie :
-     le vert olive rgb(123, 134, 90), le marron de sa robe, le beige de ses poteries) */
+  /* Couleurs (palette du 08/10 d'après la photo de Marie :
+     le marron de sa robe et le beige de ses poteries, sans vert) */
   --porcelaine: #F6F2EA;   /* fond principal : beige des poteries, très clair */
   --biscuit: #E8DFCE;      /* fond des sections alternées : beige des poteries */
   --craie: #DDD3BF;        /* fonds d'encarts, cadres vides */
   --gres: #8C8470;         /* gris chaud, éléments décoratifs */
   --encre: #2E2225;        /* texte principal et pied de page : marron de la robe */
   --encre-douce: #5A4D4F;  /* texte secondaire */
-  --olive: #7B865A;        /* vert olive de Marie, pour les grands éléments (« Céramiste », traits) */
-  --terre: #59633E;        /* accent : boutons, liens, petits titres. Olive foncé, pour rester lisible (contraste AA) */
-  --terre-fonce: #464E30;  /* survol des boutons */
-  --terre-claire: #AEB98A; /* accent sur fond sombre (pied de page) : olive clair */
-  --celadon: #B9C1A6;      /* vert-gris doux */
+  --olive: #8C7663;        /* brun-taupe, pour les grands éléments (« Céramiste », traits). Le nom est resté de la version olive */
+  --terre: #4A3438;        /* accent : boutons, liens, petits titres. Marron de la robe, un peu éclairci */
+  --terre-fonce: #2E2225;  /* survol des boutons : marron de la robe */
+  --terre-claire: #DDD3BF; /* accent sur fond sombre (pied de page) : beige des poteries */
+  --celadon: #CFC3AE;      /* beige grisé doux */
   --ligne: rgba(46, 34, 37, .14);
 
   /* Polices (chargées depuis Google Fonts dans chaque page) */
@@ -103,7 +103,7 @@ p { margin: 0 0 1.1em; }
 /* Infos manquantes, visibles pour les repérer facilement */
 .a-completer {
   color: var(--terre-fonce);
-  background: rgba(89, 99, 62, .09);
+  background: rgba(74, 52, 56, .09);
   border-radius: 3px;
   padding: 0 .3em;
 }
@@ -147,6 +147,9 @@ p { margin: 0 0 1.1em; }
 }
 
 .marque {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
   font-family: var(--serif);
   font-size: 1.5rem;
   font-weight: 400;
@@ -155,6 +158,14 @@ p { margin: 0 0 1.1em; }
   color: var(--encre);
   white-space: nowrap;
 }
+
+/* Logos de Marie : monogramme MD à gauche, CASA à droite */
+.marque-logo { width: auto; height: 46px; }
+.entete-casa { flex-shrink: 0; }
+.entete-casa img { width: auto; height: 24px; }
+@media (min-width: 761px) { .menu { margin-left: auto; } }
+@media (max-width: 960px) { .entete-casa { display: none; } }
+.titre-logo img { width: clamp(170px, 22vw, 250px); height: auto; margin-top: .2em; }
 
 .menu ul {
   display: flex;
@@ -295,7 +306,7 @@ p { margin: 0 0 1.1em; }
   letter-spacing: .05em;
   color: var(--terre);
   text-decoration: none;
-  border-bottom: 1px solid rgba(89, 99, 62, .35);
+  border-bottom: 1px solid rgba(74, 52, 56, .35);
   padding-bottom: 2px;
   transition: border-color .3s ease, gap .3s ease;
 }
@@ -346,9 +357,9 @@ p { margin: 0 0 1.1em; }
 }
 
 /* Tons d'émail pour les emplacements provisoires */
-.ton-terre   { background: radial-gradient(120% 95% at 28% 16%, #E8E7D6 0%, #CFD1B3 52%, #B3B88F 100%); }
+.ton-terre   { background: radial-gradient(120% 95% at 28% 16%, #EDE4D6 0%, #D9C9B2 52%, #C2AD92 100%); }
 .ton-gres    { background: radial-gradient(120% 95% at 72% 18%, #F0EBE0 0%, #E2D9C7 55%, #D2C6AF 100%); }
-.ton-celadon { background: radial-gradient(120% 95% at 30% 18%, #E6E9DD 0%, #D0D6C2 55%, #B9C1A6 100%); }
+.ton-celadon { background: radial-gradient(120% 95% at 30% 18%, #ECE6DC 0%, #DCD2C2 55%, #C9BCA7 100%); }
 .ton-craie   { background: radial-gradient(120% 95% at 50% 12%, #F5F1E8 0%, #E9E2D4 60%, #DCD3C1 100%); }
 .ton-nuit    { background: radial-gradient(120% 95% at 34% 18%, #574549 0%, #3E2F33 55%, #2E2225 100%); }
 .ton-nuit .a-venir { color: rgba(246, 242, 234, .7); }
@@ -663,6 +674,7 @@ p { margin: 0 0 1.1em; }
   gap: 40px;
 }
 .pied .marque { color: var(--porcelaine); font-size: 1.8rem; }
+.pied .marque-logo { height: 60px; }
 .pied-metier {
   margin: .5em 0 0;
   font-family: var(--serif);
@@ -683,7 +695,7 @@ p { margin: 0 0 1.1em; }
 .pied a { color: var(--porcelaine); text-decoration: none; }
 .pied a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .pied :focus-visible { outline-color: var(--terre-claire); }
-.pied .a-completer { color: #D5DCBC; background: rgba(174, 185, 138, .16); white-space: nowrap; }
+.pied .a-completer { color: #E6DCCB; background: rgba(221, 211, 191, .16); white-space: nowrap; }
 
 .pied-bas { margin-top: clamp(48px, 6vw, 72px); border-top: 1px solid rgba(246, 242, 234, .12); }
 .pied-bas .conteneur {
