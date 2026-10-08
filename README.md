@@ -10,11 +10,12 @@ Site vitrine de Marie D’Antoni, céramiste. C’est un site **statique** (HTML
 
 | Fichier | Page |
 |---|---|
-| `index.html` | Accueil : nom, accroche, trois blocs vers les autres pages |
-| `presentation.html` | Présentation : qui est Marie, son travail, l’atelier |
-| `rendez-vous.html` | Rendez-vous : types de rendez-vous, déroulé, coordonnées |
+| `index.html` | Accueil : texte de présentation de Marie, CASA (l’atelier), blocs vers les autres pages, prestations pour les structures |
+| `presentation.html` | À propos : « Quelques mots sur moi », venir à l’atelier |
+| `ateliers.html` | Ateliers : modelage, émaillage, parent-enfant, stage enfants, prestations, réservation et coordonnées |
+| `rendez-vous.html` | Ancienne page, remplacée par `ateliers.html` : elle renvoie automatiquement vers la réservation des ateliers |
 | `ateliers-entreprise.html` | Ateliers en entreprise : formules, déroulé, questions fréquentes, demande de devis |
-| `boutique.html` | Boutique : grille des pièces (prix à venir, pas de paiement en ligne) |
+| `boutique.html` | Shop : grille des pièces (prix à venir, pas de paiement en ligne) |
 | `mentions-legales.html` | Mentions légales (liées dans le pied de page) |
 | `404.html` | Page affichée quand une adresse n’existe pas |
 
@@ -25,10 +26,11 @@ Site vitrine de Marie D’Antoni, céramiste. C’est un site **statique** (HTML
   ```
   grep -n "à compléter\|À COMPLÉTER\|PHOTO À VENIR" *.html
   ```
-- **Menu et pied de page** : ils sont répétés dans chaque page. Une modification du menu ou du pied de page se fait dans les 7 fichiers `.html`.
+- **Menu et pied de page** : ils sont répétés dans chaque page. Le menu contient Accueil, À propos, Ateliers et Shop (un Blog viendra plus tard). Une modification du menu ou du pied de page se fait dans toutes les pages `.html` (sauf `rendez-vous.html`, qui n’est plus qu’un renvoi).
+- **Textes de Marie** : ils sont repérés par un commentaire `<!-- Texte de Marie (texte N) -->`. Les retours à la ligne et l’absence de points y sont voulus.
 - **Couleurs, polices, espacements** : en haut de `css/style.css`, dans le bloc `:root`.
 - **Menu mobile et animations** : `js/main.js`.
-- **Bouton « Prendre rendez-vous »** (page `rendez-vous.html`) : il descend pour l’instant vers les coordonnées (`href="#coordonnees"`). On remplacera ce lien par l’outil de réservation de Marie ou par un `mailto:` quand on le connaîtra.
+- **Réservation** : les boutons « Réserver un atelier » mènent à la page `ateliers.html` (section `#reserver` : email et WhatsApp). Si Marie choisit un outil de réservation en ligne, c’est là qu’on mettra le lien.
 
 ## Photos
 
