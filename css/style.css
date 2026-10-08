@@ -390,6 +390,9 @@ p { margin: 0 0 1.1em; }
 .texte p:not(.surtitre) { color: var(--encre-douce); }
 .texte .boutons { margin-top: 1.8rem; }
 
+/* À propos : blocs texte / photo qui alternent */
+.apropos .duo + .duo { margin-top: clamp(64px, 9vw, 128px); }
+
 @media (max-width: 700px) {
   .duo { grid-template-columns: 1fr; }
   .duo--inverse > :first-child { order: 0; }
