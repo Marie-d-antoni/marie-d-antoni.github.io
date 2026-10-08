@@ -12,9 +12,9 @@ Site vitrine de Marie D’Antoni, céramiste. C’est un site **statique** (HTML
 |---|---|
 | `index.html` | Accueil : texte de présentation de Marie, CASA (l’atelier), blocs vers les autres pages, prestations pour les structures |
 | `presentation.html` | À propos : « Quelques mots sur moi », venir à l’atelier |
-| `ateliers.html` | Ateliers : modelage, émaillage, parent-enfant, stage enfants, prestations, réservation et coordonnées |
+| `ateliers.html` | Ateliers : modelage, émaillage, parent-enfant, stage enfants, réservation et coordonnées |
 | `rendez-vous.html` | Ancienne page, remplacée par `ateliers.html` : elle renvoie automatiquement vers la réservation des ateliers |
-| `ateliers-entreprise.html` | Ateliers en entreprise : formules, déroulé, questions fréquentes, demande de devis |
+| `ateliers-entreprise.html` | Entreprises (onglet « Entreprises » du menu) : « Mes prestations » (texte de Marie), puis formules, déroulé, questions fréquentes, demande de devis |
 | `boutique.html` | Shop : grille des pièces (prix à venir, pas de paiement en ligne) |
 | `mentions-legales.html` | Mentions légales (liées dans le pied de page) |
 | `404.html` | Page affichée quand une adresse n’existe pas |
@@ -26,7 +26,7 @@ Site vitrine de Marie D’Antoni, céramiste. C’est un site **statique** (HTML
   ```
   grep -n "à compléter\|À COMPLÉTER\|PHOTO À VENIR" *.html
   ```
-- **Menu et pied de page** : ils sont répétés dans chaque page. Le menu contient Accueil, À propos, Ateliers et Shop (un Blog viendra plus tard). Une modification du menu ou du pied de page se fait dans toutes les pages `.html` (sauf `rendez-vous.html`, qui n’est plus qu’un renvoi).
+- **Menu et pied de page** : ils sont répétés dans chaque page. Le menu contient Accueil, À propos, Ateliers, Entreprises et Shop (un Blog viendra plus tard). Une modification du menu ou du pied de page se fait dans toutes les pages `.html` (sauf `rendez-vous.html`, qui n’est plus qu’un renvoi).
 - **Textes de Marie** : ils sont repérés par un commentaire `<!-- Texte de Marie (texte N) -->`. Les retours à la ligne et l’absence de points y sont voulus.
 - **Couleurs, polices, espacements** : en haut de `css/style.css`, dans le bloc `:root`.
 - **Menu mobile et animations** : `js/main.js`.
