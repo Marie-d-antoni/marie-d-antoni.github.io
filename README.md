@@ -82,3 +82,7 @@ Un commit par modification, puis `git push` sur la branche `main`. GitHub Pages 
   ```
 - `img/partage-4.jpg` (1 200 × 630 px : nom, métier et monogramme MD, aux couleurs du site) est l’image qui s’affiche quand on partage un lien du site (messageries, réseaux). Elle pourra être remplacée par une vraie photo au même format.
 - Police : Karla, pour les titres comme pour le texte (depuis le 08/10/2026), chargée depuis Google Fonts.
+
+## Avant le lancement officiel
+
+Pour l’instant, chaque page contient `<meta name="robots" content="noindex">` : Google et les autres moteurs de recherche n’affichent pas le site dans leurs résultats (il reste visible pour qui a l’adresse). **Le jour du lancement**, retirer cette ligne (et son commentaire) dans toutes les pages, sauf `404.html` et `rendez-vous.html` qui doivent la garder.
