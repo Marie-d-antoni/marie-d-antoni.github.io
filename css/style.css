@@ -524,6 +524,9 @@ p { margin: 0 0 1.1em; }
 @media (max-width: 860px) { .grille-2 { grid-template-columns: 1fr; gap: 32px; } }
 .carte .carte-infos { margin: 0 0 1.3em; padding: 12px 0; border-bottom: 1px solid var(--ligne); }
 .carte .cadre { margin: .2em 0 1.2em; }
+/* Ateliers : photos des deux premières cartes alignées en bas (cartes de même hauteur) */
+.grille-2--photos-alignees { align-items: stretch; }
+.grille-2--photos-alignees .carte > .cadre:last-child { margin: auto 0 0; }
 
 .coordonnees {
   display: grid;
