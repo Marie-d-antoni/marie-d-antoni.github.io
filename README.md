@@ -12,7 +12,7 @@ Site vitrine de Marie D’Antoni, céramiste. C’est un site **statique** (HTML
 |---|---|
 | `index.html` | Accueil : texte de présentation de Marie, CASA (l’atelier), blocs vers les autres pages, prestations pour les structures |
 | `presentation.html` | À propos : « Quelques mots sur moi », venir à l’atelier |
-| `ateliers.html` | Ateliers : modelage, émaillage, parent-enfant, stage enfants, réservation et coordonnées |
+| `ateliers.html` | Ateliers : modelage, émaillage, parent-enfant (carte « Stage enfants » masquée pour l’instant), réservation et coordonnées |
 | `rendez-vous.html` | Ancienne page, remplacée par `ateliers.html` : elle renvoie automatiquement vers la réservation des ateliers |
 | `ateliers-entreprise.html` | Entreprises (onglet « Entreprises » du menu) : « Mes prestations » (texte de Marie), puis formules, déroulé, questions fréquentes, demande de devis |
 | `boutique.html` | Shop : grille des pièces (prix à venir, pas de paiement en ligne) |
