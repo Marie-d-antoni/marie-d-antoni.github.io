@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marie-d-antoni.github.io/sitemap.xml
+Sitemap: https://mariedantoni.fr/sitemap.xml

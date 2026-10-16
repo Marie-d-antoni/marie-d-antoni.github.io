@@ -3,7 +3,9 @@
 Site vitrine de Marie D’Antoni, céramiste. C’est un site **statique** (HTML, CSS et un peu de JavaScript), sans framework, sans base de données et sans outil de construction : chaque page est un fichier que l’on peut ouvrir et modifier directement.
 
 - Publication : **GitHub Pages**, depuis la branche `main`, à la racine du dépôt.
-- Adresse : **https://marie-d-antoni.github.io/** (organisation GitHub `Marie-d-antoni`, dépôt `marie-d-antoni.github.io`).
+- Adresse : **https://mariedantoni.fr/** (nom de domaine acheté chez OVHcloud le 16/10/2026 ; l’ancienne adresse marie-d-antoni.github.io redirige vers celle-ci). Organisation GitHub `Marie-d-antoni`, dépôt `marie-d-antoni.github.io`.
+- Le fichier `CNAME` (une seule ligne : `mariedantoni.fr`) indique à GitHub Pages le nom de domaine : ne pas le supprimer.
+- Zone DNS chez OVHcloud : 4 entrées A pour `@` (185.199.108.153, .109.153, .110.153, .111.153) et un CNAME `www` → `marie-d-antoni.github.io.` ; les autres entrées (MX, SPF, DKIM…) servent aux e-mails OVH.
 - Langue : français.
 
 ## Les pages
@@ -78,7 +80,7 @@ Un commit par modification, puis `git push` sur la branche `main`. GitHub Pages 
 - Tous les liens sont **relatifs** (`presentation.html`, `css/style.css`…), jamais `/presentation.html` : le site marche à la racine comme dans un sous-dossier, et le nom du dossier local n’a pas d’importance.
 - L’adresse complète du site n’apparaît qu’à ces endroits : en haut de chaque page, les balises de partage (`og:url`, `og:image`) et l’adresse de référence (`<link rel="canonical">`) ; le plan du site `sitemap.xml` ; le fichier `robots.txt` ; et ce fichier. Si l’adresse change (nom de domaine, par exemple), il faut modifier ces lignes et ajouter un fichier `CNAME`. Pour les retrouver :
   ```
-  grep -rn "marie-d-antoni.github.io" --include=*.html --include=*.xml --include=*.txt .
+  grep -rn "mariedantoni.fr" --include=*.html --include=*.xml --include=*.txt .
   ```
 - `img/partage-4.jpg` (1 200 × 630 px : nom, métier et monogramme MD, aux couleurs du site) est l’image qui s’affiche quand on partage un lien du site (messageries, réseaux). Elle pourra être remplacée par une vraie photo au même format.
 - Police : Karla, pour les titres comme pour le texte (depuis le 08/10/2026), chargée depuis Google Fonts.
